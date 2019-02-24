@@ -60,5 +60,72 @@ $git diff      //这里可以看到更改以前的不同
 
 ```
 git checkout -- [file]      //总之，就是让这个文件回到最近一次`git commit`或`git add`时的状态。
+git reset HEAD <file>       //这样可以把add以后，但是没有commit的东西，退回修改
+```
+
+## git删除文件
+
+```
+$rm [file]
+
+$git rm [file]
+
+$ git commit -m "reason"
+```
+
+## github本地仓库上传管理
+
+### 首先要在github上创建一个仓库
+
+### 然后在git上运行如下命令
+
+```
+$ git remote add origin git@github.com:Nineliebehind/[本地仓库名称].git
+```
+
+### 然后把本地内容推送到上面，用以下命令
+
+```
+$ git push -u origin master    //只有第一次要这样，之后可以简化代码
+```
+
+### 以后推送只要
+
+```
+git push origin master   //这样就可以把最新的东西推上
+```
+
+## github从远程关联本地
+
+### 这里将远程的仓库克隆到本地
+
+```
+$ git clone git@github.com:michaelliao/[仓库名字].git
+```
+
+## github从分支管理
+
+### 创建分支,并且切换分支
+
+```
+$git checkout -b [branch name]
+```
+
+### 查看分支
+
+```
+$git branch
+```
+
+### 切换分支
+
+```
+git checkout [branch name]
+```
+
+### 删除分支
+
+```
+git branch -d [branch name]
 ```
 
