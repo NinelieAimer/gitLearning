@@ -86,7 +86,7 @@ $ git remote add origin git@github.com:Nineliebehind/[本地仓库名称].git
 ### 然后把本地内容推送到上面，用以下命令
 
 ```
-$ git push -u origin master    //只有第一次要这样，之后可以简化代码
+$ git push -u origin [branch name]    //只有第一次要这样，之后可以简化代码
 ```
 
 ### 以后推送只要
@@ -123,9 +123,60 @@ $git branch
 git checkout [branch name]
 ```
 
+### 合并分支
+
+进入某一分支，然后就可以把别的分支合并到这个分支
+
+$git merge [branch name]
+
 ### 删除分支
 
 ```
 git branch -d [branch name]
+```
+
+## git的bug分支
+
+git有时候你开发到一半，要暂停去修复bug.你就要保留你现在内容，而且暂存区要是干净的，你可以调用如下命令
+
+```
+$ git stash
+```
+
+这样就创建了一个快照类似的东西而且还是干净的，当你需要回来工作时候有两种恢复方法
+
+```
+git stash apply     //这样slash内容不会删除，你要调用git stash drop删除
+
+//第二种直接删除,连同slash
+git stash pop
+
+```
+
+## git 创建标签
+
+```
+git tag [tag name]  [commit id]   //版本可写可不写
+git show [tag name]  //这样就可以看到这个标签的详细信息
+git tag -a [tag name] -m "descripe" [commit id]   //也能提交描述
+```
+
+## git推送标签
+
+git不能自动推送标签需要用
+
+```
+git push origin [tag name]   //这样才可以推送标签去远程
+git push origin --tags      //一次性推送所有标签
+
+```
+
+git 删除标签
+
+```
+//首先要删除本地的标签
+git tag -d [tag name]   
+//然后删除远端的标签
+git push origin:refs/tags/[tag name]
 ```
 
