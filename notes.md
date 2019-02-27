@@ -95,6 +95,14 @@ $ git push -u origin [branch name]    //只有第一次要这样，之后可以�
 git push origin master   //这样就可以把最新的东西推上
 ```
 
+还可以删除本地仓库找到地方
+
+```
+$rm -rf .git
+```
+
+
+
 ## github从远程关联本地
 
 ### 这里将远程的仓库克隆到本地
